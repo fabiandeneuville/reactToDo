@@ -1,0 +1,9 @@
+.header {
+    background-color: teal;
+    padding: 25px;
+}
+
+.header__heading {
+    color: white;
+    text-align: center;
+}
