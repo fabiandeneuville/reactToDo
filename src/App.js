@@ -1,5 +1,5 @@
 
-import Header from './components/header/header'
+import Header from './Components/Header/Header'
 
 function App() {
   return (
