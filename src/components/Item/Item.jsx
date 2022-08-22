@@ -1,11 +1,11 @@
 import './Item.css'
 
-function Item(){
+function Item(props){
 
     return (
         <li>
-            <p>test</p>
-            <button>X</button>
+            <p>{props.txt}</p>
+            <button onClick={() => props.deleteFunc(props.id)}>X</button>
         </li>
     )
 
