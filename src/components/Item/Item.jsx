@@ -3,9 +3,10 @@ import './Item.css'
 function Item(){
 
     return (
-        <div>
-
-        </div>
+        <li>
+            <p>test</p>
+            <button>X</button>
+        </li>
     )
 
 }
