@@ -52,10 +52,10 @@ function Form(){
                 id="toDo"
                 value={stateInput || ''}
                 />
+                <p className='error-message'>{errorMessage}</p>
                 <input 
                 type="submit" 
                 value="Ajouter"/>
-                <p>{errorMessage}</p>
             </form>
             <div className='list-container'>
                 <h2>Liste des choses à faire : </h2>
