@@ -6,7 +6,7 @@ import {useState} from 'react'
 
 function Form(){
 
-    const [dataArr, setDataArr] = useState([
+    const [toDoList, setToDoList] = useState([
         // {txt: 'Apprendre les bases de React', id: uuidv4()},
     ])
 
@@ -15,8 +15,8 @@ function Form(){
     const [errorMessage, setErrorMessage] = useState('')
 
     const deleteElement = (id) => {
-        const filteredState = dataArr.filter((item) => item.id !== id)
-        setDataArr(filteredState)
+        const filteredState = toDoList.filter((item) => item.id !== id)
+        setToDoList(filteredState)
     }
 
     const linkedInput = (e) => {
@@ -29,10 +29,10 @@ function Form(){
         if(stateInput === ''){
             setErrorMessage('Veuillez renseigner une tache !')
         } else {
-            const newArr = [...dataArr, {
+            const newArr = [...toDoList, {
                 txt: stateInput, id: uuidv4()
             }]
-            setDataArr(newArr)
+            setToDoList(newArr)
             setStateInput('')
             setErrorMessage('')
         }
@@ -60,7 +60,7 @@ function Form(){
             <div className='list-container'>
                 <h2>Liste des choses à faire : </h2>
                 <ul className="list">
-                    {dataArr.map((item) => {
+                    {toDoList.map((item) => {
                         return (
                             <Item
                             txt={item.txt}
