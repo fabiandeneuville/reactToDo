@@ -10,7 +10,9 @@ function Form(){
         // {txt: 'Apprendre les bases de React', id: uuidv4()},
     ])
 
-    const [stateInput, setStateInput] = useState()
+    const [stateInput, setStateInput] = useState('')
+
+    const [errorMessage, setErrorMessage] = useState('')
 
     const deleteElement = (id) => {
         const filteredState = dataArr.filter((item) => item.id !== id)
@@ -24,11 +26,17 @@ function Form(){
     const addTodo = (e) => {
         e.preventDefault()
 
-        const newArr = [...dataArr, {
-            txt: stateInput, id: uuidv4()
-        }]
-        setDataArr(newArr)
-        setStateInput('')
+        if(stateInput === ''){
+            setErrorMessage('Veuillez renseigner une tache !')
+        } else {
+            const newArr = [...dataArr, {
+                txt: stateInput, id: uuidv4()
+            }]
+            setDataArr(newArr)
+            setStateInput('')
+            setErrorMessage('')
+        }
+
         
     }
 
@@ -47,6 +55,7 @@ function Form(){
                 <input 
                 type="submit" 
                 value="Ajouter"/>
+                <p>{errorMessage}</p>
             </form>
             <div className='list-container'>
                 <h2>Liste des choses à faire : </h2>
